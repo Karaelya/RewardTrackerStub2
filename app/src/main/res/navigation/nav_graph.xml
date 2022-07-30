@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/addPartnerFragment">
+
+    <fragment
+        android:id="@+id/addPartnerFragment"
+        android:name="com.example.rewardtrackerstub2.ui.AddPartnerFragment"
+        android:label="fragment_add_partner"
+        tools:layout="@layout/fragment_add_partner" >
+        <action
+            android:id="@+id/action_addPartnerFragment_to_partnerDetailFragment"
+            app:destination="@id/partnerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partnerDetailFragment"
+        android:name="com.example.rewardtrackerstub2.ui.PartnerDetailFragment"
+        android:label="fragment_partner_details"
+        tools:layout="@layout/fragment_partner_details" >
+        <action
+            android:id="@+id/action_partnerDetailFragment_to_addPartnerFragment"
+            app:destination="@id/addPartnerFragment" />
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+</navigation>
